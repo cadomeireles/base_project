@@ -1,0 +1,2 @@
+# Python Web framework
+Django==1.11.1

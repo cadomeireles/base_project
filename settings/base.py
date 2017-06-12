@@ -1,9 +1,12 @@
 import os
 
+from decouple import config
+from dj_database_url import parse as db_url
+
 
 # Basic definitions
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DEBUG = True
+DEBUG = config('DEBUG', default=True, cast=bool)
 
 # Active apps
 INSTALLED_APPS = [
@@ -49,15 +52,16 @@ TEMPLATES = [
 
 # Databases
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': config(
+        'DATABASE_URL',
+        default='sqlite:///{}'.format(os.path.join(BASE_DIR, 'db.sqlite3')),
+        cast=db_url,
+    ),
 }
 
 # Internationalization
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = config('LANGUAGE_CODE', default='en-us')
+TIME_ZONE = config('TIME_ZONE', default='UTC')
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True

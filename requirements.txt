@@ -1,2 +1,8 @@
 # Python Web framework
 Django==1.11.1
+
+# Strict separation of settings from code
+python-decouple==3.0
+
+# Use database URLs in Django applications
+dj-database-url==0.4.2

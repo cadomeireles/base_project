@@ -1,8 +1,11 @@
+from decouple import Csv, config
+
+
 # Key for salting hashes and such
-SECRET_KEY = '4h&hnf*mta9ks*3p*it6qvg8k9_uy1%re1o*au5!ar99cxaxus'
+SECRET_KEY = config('SECRET_KEY', default='CHANGE-ME')
 
 # Host names allowed
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='*', cast=Csv())
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [

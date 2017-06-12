@@ -9,3 +9,6 @@ dj-database-url==0.4.2
 
 # Ease path/files operations
 Unipath==1.1
+
+# PostgreSQL adapter for the Python
+psycopg2==2.7.1

@@ -1,11 +1,10 @@
-import os
-
 from decouple import config
 from dj_database_url import parse as db_url
+from unipath import Path
 
 
 # Basic definitions
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).ancestor(2)
 DEBUG = config('DEBUG', default=True, cast=bool)
 
 # Active apps
@@ -54,7 +53,7 @@ TEMPLATES = [
 DATABASES = {
     'default': config(
         'DATABASE_URL',
-        default='sqlite:///{}'.format(os.path.join(BASE_DIR, 'db.sqlite3')),
+        default='sqlite:///{}'.format(BASE_DIR.child('db.sqlite3')),
         cast=db_url,
     ),
 }

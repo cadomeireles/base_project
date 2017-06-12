@@ -6,3 +6,6 @@ python-decouple==3.0
 
 # Use database URLs in Django applications
 dj-database-url==0.4.2
+
+# Ease path/files operations
+Unipath==1.1

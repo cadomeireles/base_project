@@ -1,8 +1,8 @@
 # Python Web framework
-Django==1.11.1
+Django==2.0
 
 # Strict separation of settings from code
-python-decouple==3.0
+python-decouple==3.1
 
 # Use database URLs in Django applications
 dj-database-url==0.4.2
@@ -11,4 +11,4 @@ dj-database-url==0.4.2
 Unipath==1.1
 
 # PostgreSQL adapter for the Python
-psycopg2==2.7.1
+psycopg2==2.7.3.2

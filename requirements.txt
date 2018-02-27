@@ -1,5 +1,5 @@
 # Python Web framework
-Django==2.0
+Django==2.0.2
 
 # Strict separation of settings from code
 python-decouple==3.1
